@@ -1,11 +1,13 @@
 import "./styles/score-board.css";
 //  Where the score is presented
+type ScoreBoardProps = {
+  incorrectCount: number;
+  correctCount: number;
+  answersLeft: string[];
+};
 
-const incorrectCount = 0;
-const correctCount = 0;
-const answersLeft = ["trout", "salmon", "tuna", "shark"];
-
-export function FunctionalScoreBoard() {
+export function FunctionalScoreBoard(props: ScoreBoardProps) {
+  const { incorrectCount, correctCount, answersLeft } = props;
   return (
     <div id="score-board">
       <div>Incorrect 🔻: {incorrectCount}</div>

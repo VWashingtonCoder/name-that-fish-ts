@@ -28,7 +28,6 @@ interface ClassAppState {
   answersLeft: string[];
   incorrectCount: number;
   correctCount: number;
-  totalCount: number;
 }
 
 export class ClassApp extends Component<object, ClassAppState> {
@@ -37,7 +36,6 @@ export class ClassApp extends Component<object, ClassAppState> {
     answersLeft: initialFishes.map((fish) => fish.name),
     incorrectCount: 0,
     correctCount: 0,
-    totalCount: initialFishes.length,
   };
   render() {
     const guessFish = (guess: string) => {
@@ -86,7 +84,7 @@ export class ClassApp extends Component<object, ClassAppState> {
           </>
         ) : (
           <ClassFinalScore
-            totalCount={this.state.totalCount}
+            totalCount={initialFishes.length}
             correctCount={this.state.correctCount}
             resetGame={resetGame}
           />

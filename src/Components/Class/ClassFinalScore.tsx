@@ -19,7 +19,7 @@ export class ClassFinalScore extends Component<FinalScoreProps> {
           <p>{totalCount}</p>
         </div>
         <button className="reset-btn" onClick={resetGame}>
-          Reset Game
+          Play Again?
         </button>
       </div>
     );
