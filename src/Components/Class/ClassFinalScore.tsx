@@ -5,10 +5,10 @@ type FinalScoreProps = {
   correctCount: number;
 };
 
-export class ClassFinalScore extends Component <FinalScoreProps> {
+export class ClassFinalScore extends Component<FinalScoreProps> {
   render() {
     const { totalCount, correctCount } = this.props;
-    
+
     return (
       <div id="final-score">
         <h1>Your Final Score Was</h1>
