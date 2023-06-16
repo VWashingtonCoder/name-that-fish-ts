@@ -23,8 +23,8 @@ To get this project setup, you should:
 
 ### Standard Requirements
 
-- [ ] Setup eslint
-- [ ] Pass all linting checks
+- [X] Setup eslint
+- [X] Pass all linting checks
 
 - To check if linting passes, run `npm run lint`
 
