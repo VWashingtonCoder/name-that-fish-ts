@@ -1,25 +1,25 @@
 import { Component } from "react";
 import "./styles/game-board.css";
-import { Images } from "../../assets/Images";
+// import { Images } from "../../assets/Images";
 
-const initialFishes = [
-  {
-    name: "trout",
-    url: Images.trout,
-  },
-  {
-    name: "salmon",
-    url: Images.salmon,
-  },
-  {
-    name: "tuna",
-    url: Images.tuna,
-  },
-  {
-    name: "shark",
-    url: Images.shark,
-  },
-];
+// const initialFishes = [
+//   {
+//     name: "trout",
+//     url: Images.trout,
+//   },
+//   {
+//     name: "salmon",
+//     url: Images.salmon,
+//   },
+//   {
+//     name: "tuna",
+//     url: Images.tuna,
+//   },
+//   {
+//     name: "shark",
+//     url: Images.shark,
+//   },
+// ];
 
 export class ClassGameBoard extends Component {
   render() {
