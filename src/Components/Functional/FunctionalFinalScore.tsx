@@ -1,10 +1,6 @@
 import "./styles/final-score.css";
+import { FinalScoreProps } from "../Types";
 
-type FinalScoreProps = {
-  correctCount: number;
-  totalCount: number;
-  resetGame: () => void;
-};
 
 export const FunctionalFinalScore = ({
   correctCount,

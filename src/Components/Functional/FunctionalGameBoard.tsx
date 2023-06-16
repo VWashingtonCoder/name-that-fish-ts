@@ -1,13 +1,6 @@
 import "./styles/game-board.css";
 import { useState } from "react";
-
-type GameBoardProps = {
-  currentFish: {
-    name: string;
-    url: string;
-  };
-  handleGuess: (guess: string) => void;
-};
+import { GameBoardProps } from "../Types";
 
 export function FunctionalGameBoard(props: GameBoardProps) {
   const { currentFish, handleGuess } = props;

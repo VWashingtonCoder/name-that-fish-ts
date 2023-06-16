@@ -1,10 +1,5 @@
 import { Component } from "react";
-
-type FinalScoreProps = {
-  totalCount: number;
-  correctCount: number;
-  resetGame: () => void;
-};
+import { FinalScoreProps } from "../Types";
 
 export class ClassFinalScore extends Component<FinalScoreProps> {
   render() {

@@ -38,7 +38,7 @@ export class ClassApp extends Component<object, ClassAppState> {
     correctCount: 0,
   };
   render() {
-    const guessFish = (guess: string) => {
+    const handleGuess = (guess: string) => {
       guess = guess.toLowerCase().trim();
 
       if (guess === initialFishes[this.state.currentFishIdx].name) {
@@ -79,7 +79,7 @@ export class ClassApp extends Component<object, ClassAppState> {
             />
             <ClassGameBoard
               currentFish={initialFishes[this.state.currentFishIdx]}
-              guessFish={guessFish}
+              handleGuess={handleGuess}
             />
           </>
         ) : (
