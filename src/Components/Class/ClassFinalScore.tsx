@@ -3,11 +3,12 @@ import { Component } from "react";
 type FinalScoreProps = {
   totalCount: number;
   correctCount: number;
+  resetGame: () => void;
 };
 
 export class ClassFinalScore extends Component<FinalScoreProps> {
   render() {
-    const { totalCount, correctCount } = this.props;
+    const { totalCount, correctCount, resetGame } = this.props;
 
     return (
       <div id="final-score">
@@ -17,6 +18,9 @@ export class ClassFinalScore extends Component<FinalScoreProps> {
           <hr />
           <p>{totalCount}</p>
         </div>
+        <button className="reset-btn" onClick={resetGame}>
+          Reset Game
+        </button>
       </div>
     );
   }

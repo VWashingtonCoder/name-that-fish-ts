@@ -21,7 +21,7 @@ const initialFishes = [
     name: "shark",
     url: Images.shark,
   },
-]
+];
 
 interface ClassAppState {
   currentFishIdx: number;
@@ -31,7 +31,7 @@ interface ClassAppState {
   totalCount: number;
 }
 
-export class ClassApp extends Component <object, ClassAppState> {
+export class ClassApp extends Component<object, ClassAppState> {
   state = {
     currentFishIdx: 0,
     answersLeft: initialFishes.map((fish) => fish.name),
@@ -47,7 +47,7 @@ export class ClassApp extends Component <object, ClassAppState> {
         this.setState((prevState) => ({
           correctCount: prevState.correctCount + 1,
         }));
-      } else {      
+      } else {
         this.setState((prevState) => ({
           incorrectCount: prevState.incorrectCount + 1,
         }));
@@ -60,29 +60,37 @@ export class ClassApp extends Component <object, ClassAppState> {
         currentFishIdx: prevState.currentFishIdx + 1,
       }));
     };
-    
+
+    const resetGame = () => {
+      this.setState({
+        currentFishIdx: 0,
+        answersLeft: initialFishes.map((fish) => fish.name),
+        incorrectCount: 0,
+        correctCount: 0,
+      });
+    };
+
     return (
       <>
-        {this.state.answersLeft.length > 0 
-          ? (
-            <>
-              <ClassScoreBoard 
-                incorrectCount={this.state.incorrectCount}
-                correctCount={this.state.correctCount}
-                answersLeft={this.state.answersLeft}
-              />
-              <ClassGameBoard 
-                currentFish={initialFishes[this.state.currentFishIdx]}
-                guessFish={guessFish}
-              />
-            </>
-          ) : (
-            <ClassFinalScore 
-              totalCount={this.state.totalCount}
+        {this.state.answersLeft.length > 0 ? (
+          <>
+            <ClassScoreBoard
+              incorrectCount={this.state.incorrectCount}
               correctCount={this.state.correctCount}
+              answersLeft={this.state.answersLeft}
             />
-          )
-        }
+            <ClassGameBoard
+              currentFish={initialFishes[this.state.currentFishIdx]}
+              guessFish={guessFish}
+            />
+          </>
+        ) : (
+          <ClassFinalScore
+            totalCount={this.state.totalCount}
+            correctCount={this.state.correctCount}
+            resetGame={resetGame}
+          />
+        )}
       </>
     );
   }

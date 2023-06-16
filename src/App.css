@@ -24,3 +24,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.reset-btn {
+  padding: 20px 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
