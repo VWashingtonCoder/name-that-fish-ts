@@ -32,7 +32,7 @@ export function FunctionalApp() {
 
   const handleGuess = (guess: string) => {
     guess = guess.toLowerCase().trim();
-    
+
     guess === initialFishes[currentFishIdx].name
       ? setCorrectCount(correctCount + 1)
       : setIncorrectCount(incorrectCount + 1);
@@ -45,27 +45,25 @@ export function FunctionalApp() {
 
   return (
     <>
-      {answersLeft.length > 0 
-        ? (
-          <>
-            <FunctionalScoreBoard 
-              incorrectCount={incorrectCount}
-              correctCount={correctCount}
-              answersLeft={answersLeft}
-            />
-            <FunctionalGameBoard 
-              currentFish={initialFishes[currentFishIdx]}
-              handleGuess={handleGuess}
-            />
-          </>
-        ) : (
-          <FunctionalFinalScore 
+      {answersLeft.length > 0 ? (
+        <>
+          <FunctionalScoreBoard
+            incorrectCount={incorrectCount}
             correctCount={correctCount}
-            totalCount={initialFishes.length}
-            resetGame={resetGame}
+            answersLeft={answersLeft}
           />
-        )
-      }
+          <FunctionalGameBoard
+            currentFish={initialFishes[currentFishIdx]}
+            handleGuess={handleGuess}
+          />
+        </>
+      ) : (
+        <FunctionalFinalScore
+          correctCount={correctCount}
+          totalCount={initialFishes.length}
+          resetGame={resetGame}
+        />
+      )}
     </>
   );
 }
